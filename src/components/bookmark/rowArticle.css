@@ -1,0 +1,19 @@
+
+.Row-Article-body {
+    list-style-type: none;
+    display:flex;
+    background-color: rgb(209, 232, 248);
+    width:60%;
+    margin:10px;
+
+    
+    
+}
+
+.Row-Article-body li{
+    list-style-type: none;
+    margin: 25px;
+    flex: 1;
+    
+    
+}

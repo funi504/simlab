@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import Nav from './components/homePage/Navbar'
+import BottomNav from './components/homePage/buttomNav'
+import HomePage from './pages/homePage'
+import WritingPage from './pages/writingPage'
+import Read from './pages/readPage'
+import Bookmark from './pages/bookmark'
+import { BrowserRouter as Router , Route ,Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Nav/>
+        <Routes>
+        <Route path="/"  element={ <HomePage/> }/>
+        <Route path="/write" element={ <WritingPage/> } />
+        <Route path="/read/id" element={ <Read/>} />
+        <Route path="/bookmarks" element={ <Bookmark/>} />
+        </Routes>
+        <BottomNav/>
+      </div>
+    </Router>
   );
 }
 
